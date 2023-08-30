@@ -21,11 +21,11 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
-        $article = new Article;
-        $article->title = $request->title;
-        $article->body = $request->body;
+        $articles = new Article;
+        $articles->title = $request->title;
+        $articles->body = $request->body;
 
-        $article->save();
+        $articles->save();
         return redirect('/articles');
     }
 
@@ -34,15 +34,26 @@ class ArticleController extends Controller
         return view('articles.create');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $article = Article::find($id);
+        return view('articles.edit',['article' => $article]);
     }
 
-    public function update()
+    public function update(Request $request,$id)
     {
+        $articles = Article::find($id);
+        $articles->title = $request->title;
+        $articles->body = $request->body;
+
+        $articles->save();
+        return redirect('/articles');
     }
 
-    public function destroy()
-    {
+    public function destroy($id)
+    {   
+        $article = Article::find($id);
+        $article ->delete();
+        return redirect('/articles');
     }
 }
