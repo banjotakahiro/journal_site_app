@@ -19,7 +19,7 @@
         <textarea name="body" class="body"></textarea>
     </p>
     <input type="submit" value="投稿">
-    
+
 </form>
 
 <body>

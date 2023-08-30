@@ -36,7 +36,6 @@ class ArticleController extends Controller
 
     public function edit()
     {
-    
     }
 
     public function update()
@@ -45,6 +44,5 @@ class ArticleController extends Controller
 
     public function destroy()
     {
-    
     }
 }
