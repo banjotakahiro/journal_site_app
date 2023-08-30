@@ -10,7 +10,7 @@
 
 <body>
 
-    <h1>新規論文投稿</h1>
+    <h1>論文投稿編集</h1>
     <form action="/articles/{{ $article->id }}" method='post'>
         @csrf
         @method('PATCH')
